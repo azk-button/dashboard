@@ -10,8 +10,8 @@ systems({
     image: {"docker": "azukiapp/node:0.10"},
     provision: [
       "npm install",
-      "npm run grunt",
-      "node_modules/.bin/grunt",
+      // "npm run grunt",
+      // "node_modules/.bin/grunt",
     ],
     workdir: "/azk/#{system.name}",
     shell: "/bin/bash",
