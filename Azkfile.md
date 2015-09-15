@@ -13,6 +13,21 @@
 azk start -Rv
 ```
 
+## How to run
+
+- create a new dashboard
+- refresh the page
+- add data to your local API
+
+Example: *Adding sample data with `curl`:*
+
+```sh
+curl -X POST -H "Content-Type: application/json" --data '{ "type":"home.temperature", "properties": { "temperature": 56 } }' http://dashboard.dev.azk.io/api/events
+```
+
+- add a report
+- configure the report after you added
+
 ------
 
 ## azk Quick Start

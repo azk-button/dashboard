@@ -94,7 +94,7 @@ systems({
   mongo: {
     image : { docker: "azukiapp/mongodb" },
     scalable: false,
-    wait: { retry: 60, timeout: 1000 },
+    wait: { retry: 80, timeout: 1000 },
     // Mounts folders to assigned paths
     mounts: {
       // equivalent persistent_folders
