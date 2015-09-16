@@ -11,29 +11,38 @@ The project is entirely open source and you can host your own Reportr instance o
 
 [![Screen Preview](./preview.png)](./preview.png)
 
-## Start your instance
+## Running locally
 
-Reportr is really easy to run locally or on heroku-compatible services.
+Click the button bellow to quickly and safely install this project on your local machine.
 
-```
-$ git clone https://github.com/Reportr/dashboard.git
-$ npm install .
+[![Run project](https://s3-sa-east-1.amazonaws.com/assets.azk.io/azk-button.png)](http://run-stage.azk.io/start/?repo=azk-button/regexr&ref=azkfile)
+
+The `Run Project` button employs `azk`, a lightweight open source orchestration tool that will automatically isolate and configure the application's environment for you.
+
+Learn more about `azk` [here](Azkfile.md).
+
+## Deploying to DigitalOcean
+
+After you run this project locally using [`Run Project` button](#running-locally), deploying to [DigitalOcean](http://digitalocean.com/) is very simple.
+
+First, be sure you have SSH keys configured in your machine. If you don't have it yet (or if you aren't sure about it), just follow steps 1 and 2 of [this tutorial](https://help.github.com/articles/generating-ssh-keys/).
+
+Next, put your [personal access token](https://cloud.digitalocean.com/settings/applications) into a `.env` file:
+
+```bash
+$ cd path/to/the/project
+$ echo "DEPLOY_API_TOKEN=<YOUR-PERSONAL-ACCESS-TOKEN>" >> .env
 ```
 
-To run it locally, you should use [foreman](http://ddollar.github.io/foreman/) (configuration can be stored in a [.env file](https://devcenter.heroku.com/articles/config-vars#local-setup)):
+Then, just run the following:
 
-```
-$ foreman start
+```bash
+$ azk shell deploy
 ```
 
-To deploy it on Heroku:
+The `Run Project` button employs `azk`, a lightweight open source orchestration tool that will automatically isolate and configure the application's environment for you.
 
-```
-$ heroku config:set MONGODB_URL=mongodb://...
-$ heroku config:set AUTH_USERNAME=...
-$ heroku config:set AUTH_PASSWORD=...
-$ git push heroku master
-```
+Find further instructions on how to deploy to DigitalOcean using `azk` [here](http://docs.azk.io/en/deploy/README.html).
 
 ## API and Events
 
