@@ -19,7 +19,7 @@ Click the button bellow to quickly and safely install this project on your local
 
 The `Run Project` button employs `azk`, a lightweight open source orchestration tool that will automatically isolate and configure the application's environment for you.
 
-Learn more about `azk` [here](http://azk.io).
+Learn more about `azk` [here](https://github.com/azukiapp/azk).
 
 ## Deploying to DigitalOcean
 
