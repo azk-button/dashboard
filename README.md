@@ -15,7 +15,7 @@ The project is entirely open source and you can host your own Reportr instance o
 
 Click the button bellow to quickly and safely install this project on your local machine.
 
-[![Run project](https://s3-sa-east-1.amazonaws.com/assets.azk.io/run-project.png)](http://run.azk.io/start/?repo=azk-button/reportr&ref=azkfile)
+[![Run project](https://s3-sa-east-1.amazonaws.com/assets.azk.io/run-project.png)](http://run.azk.io/start/?repo=run-project/reportr&ref=azkfile)
 
 The `Run Project` button employs `azk`, a lightweight open source orchestration tool that will automatically isolate and configure the application's environment for you.
 
