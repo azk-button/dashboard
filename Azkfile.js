@@ -1,13 +1,10 @@
 /* globals systems path persistent */
 /* eslint camelcase: [2, {properties: "never"}] */
 /* eslint comma-dangle: [0, {properties: "never"}] */
-
-/* see Azkfile.md */
 systems({
-
   dashboard: {
     depends: ['mongo', 'redis'],
-    image: {'docker': 'azukiapp/node:0.10'},
+    image: { docker: 'azukiapp/node:0.10' },
     provision: [
       'npm install'
     ],
@@ -21,7 +18,7 @@ systems({
       '/azk/#{system.name}/node_modules': persistent('#{system.name}/node_modules'),
       '/azk/#{system.name}/public/src/vendors': persistent('#{system.name}/public/src/vendors'),
     },
-    scalable: {'default': 1},
+    scalable: { default: 1 },
     http: {
       domains: [
         '#{env.HOST_DOMAIN}',                   // used if deployed
@@ -70,12 +67,12 @@ systems({
     http: null,
     ports: null,
     wait: undefined,
-    image: {'docker': 'azukiapp/node:0.10'},
+    image: { docker: 'azukiapp/node:0.10' },
     command: 'node bin/worker.js',
   },
 
   redis: {
-    image: {'docker': 'redis'},
+    image: { docker: 'redis' },
     ports: {
       data: '6379/tcp'
     },
@@ -114,7 +111,7 @@ systems({
   },
 
   deploy: {
-    image: {'docker': 'azukiapp/deploy-digitalocean'},
+    image: { docker: 'azukiapp/deploy-digitalocean' },
     mounts: {
 
       // your files on remote machine
@@ -130,10 +127,10 @@ systems({
 
     // this is not a server
     // just call with azk shell deploy
-    scalable: {'default': 0, 'limit': 0},
+    scalable: { default: 0, limit: 0 },
 
     envs: {
-      GIT_CHECKOUT_COMMIT_BRANCH_TAG: 'azkfile',
+      GIT_CHECKOUT_COMMIT_BRANCH_TAG: 'master',
       AZK_RESTART_COMMAND: 'azk restart -Rvv',
       RUN_SETUP: 'true',
       RUN_CONFIGURE: 'true',
@@ -143,7 +140,7 @@ systems({
   'fast-deploy': {
     extends: 'deploy',
     envs: {
-      GIT_CHECKOUT_COMMIT_BRANCH_TAG: 'azkfile',
+      GIT_CHECKOUT_COMMIT_BRANCH_TAG: 'master',
       AZK_RESTART_COMMAND: 'azk restart -Rvv',
       RUN_SETUP: 'false',
       RUN_CONFIGURE: 'false',
