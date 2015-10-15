@@ -77,8 +77,6 @@ systems({
       REDIS_PORT: '#{net.port.data}',
       REDIS_URL: 'redis://#{net.host}:#{net.port.data}',
       OPENREDIS_URL: 'redis://#{net.host}:#{net.port.data}',
-      DISCOURSE_REDIS_HOST: '#{net.host}',
-      DISCOURSE_REDIS_PORT: '#{net.port.data}'
     }
   },
 
